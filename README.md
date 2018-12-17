@@ -1,10 +1,10 @@
-* existing data
+existing data
 
 - demoX: (24, 100, 20)
 - demoU: (24, 100, 7)
 - xml: string
 
-* our data
+our data
 
 - end_angluar_velocity: (16, 3)
 - joint_angles: (16, 6)
