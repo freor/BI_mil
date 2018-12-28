@@ -14,6 +14,8 @@ demoX, demoU: (the number of demos in a task, time horizon, state/action)
 
 # our data
 
+- We have 10 demos in each task and the time horizon is 16
+
 ## state data
 - joint_angles: (16, 6)
 - end_position: (16, 3)
@@ -26,6 +28,7 @@ demoX, demoU: (the number of demos in a task, time horizon, state/action)
 
 ## data shape
 
-- gif: (24, )
-- demoX: (16, 13)
-- demoU: (16, 12)
+- human_gif: (10, 16, )
+- robot_gif: (1, 16, )
+- demoX: (1, 16, 13)
+- demoU: (1, 16, 12)
