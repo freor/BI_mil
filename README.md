@@ -4,6 +4,8 @@ existing data
 - demoU: (24, 100, 7)
 - xml: string
 
+24: the number of demos in a task
+
 100: time horizon
 
 our data
