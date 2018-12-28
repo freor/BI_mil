@@ -4,6 +4,8 @@ existing data
 - demoU: (24, 100, 7)
 - xml: string
 
+100: time horizon
+
 our data
 
 - end_angluar_velocity: (16, 3)
