@@ -7,7 +7,7 @@ TOTAL_SAMPLE = 220
 EACH_NUM_PNG = 21
 
 # list sample paths
-dataset_path = "./sample_data/"
+dataset_path = "../../sample_data/"
 dir_paths = [join(dataset_path, d) for d in listdir(dataset_path)] # [01_task_human, 02_task_human, ...]
 iter_paths = [[join(d, i) for i in listdir(d)] for d in dir_paths] # [[01_iter, 02_iter, ...], [01_iter, ...]]
 
