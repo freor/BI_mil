@@ -57,10 +57,14 @@ def make_demoX_and_demoU(j_file):
 
 
 if __name__ == "__main__":
+    '''
     if os.path.exists(pkl_dir):
         #os.rmdir(pkl_dir)
         shutil.rmtree(pkl_dir, ignore_errors=True)
-    os.mkdir(pkl_dir)
+    '''
+    if os.path.exists("my_pick_and_place/*.pkl"):
+        os.remove("my_pick_and_place/*.pkl")
+    #os.mkdir(pkl_dir)
 
     # [1_task, 2_task, ... ]
     json_files = [join(json_files, f) for f in sorted(os.listdir(json_files), key=(lambda x: int(x.split("_")[0])))]
@@ -80,8 +84,10 @@ if __name__ == "__main__":
             demos['demoX'].append(tmp_demos['demoX'])
             demos['demoU'].append(tmp_demos['demoU'])
 
-        demos['demoX'] = np.array(demos['demoX'])
-        demos['demoU'] = np.array(demos['demoU'])
+        demos['demoX'] = np.repeat(np.array(demos['demoX']), 11, axis=0)
+        demos['demoU'] = np.repeat(np.array(demos['demoU']), 11, axis=0)
+
+        print(np.array(demos['demoX']).shape)
 
         with open(join(pkl_dir, pkl_demos), 'wb') as handle:
             pickle.dump(demos, handle, protocol=pickle.HIGHEST_PROTOCOL)

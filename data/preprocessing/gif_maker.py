@@ -27,6 +27,7 @@ iter_paths = [[join(d, i) for i in listdir(d)] for d in dir_paths] # [[01_iter, 
 
 final_paths = []
 tmp = []
+print("iter paths", len(iter_paths))
 for i in range(len(iter_paths)):
     tmp += iter_paths[i]
     if i % 2 == 1:
@@ -43,10 +44,11 @@ for i in iter_paths:
 assert len_samples == TOTAL_SAMPLE
 print(len_samples)
 
+print("length",len(final_paths))
 # making 'png's to gif
 for n, task in enumerate(final_paths): # iter_paths
     #robot_human = n % 2
-    save_num = n / 2
+    save_num = n# / 2
     save_file_name = save_path + gif_dir_prefix + str(save_num)
     if not os.path.exists(save_file_name):
         os.mkdir(save_file_name)
@@ -61,4 +63,3 @@ for n, task in enumerate(final_paths): # iter_paths
             for f in image_data:
                 image = imageio.imread(f)
                 writer.append_data(image)
-
